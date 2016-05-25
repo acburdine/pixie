@@ -22,6 +22,15 @@ class EventHandler
     {
         return $this->events;
     }
+    
+    /**
+     * This is necessary because php ReflectionClass
+     * will throw an error if there's not a constructor.
+     * It was causing errors in php 5.3.3
+     */
+    public function __construct()
+    {
+    }
 
     /**
      * @param $event
